@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Fugaz_One, Open_Sans } from "next/font/google";
 import "./globals.css";
+import { Suspense } from "react";
 
 const open_sans = Open_Sans({ subsets: ["latin"] });
 const fugaz = Fugaz_One({ subsets: ["latin"], weight: ["400"] });
@@ -34,9 +35,11 @@ export default function RootLayout({
       <body
         className={`w-full max-w-[1000px] mx-auto text-sm sm:text-base min-h-screen flex flex-col antialiased text-slate-800 ${open_sans.className}`}
       >
-        {header}
-        {children}
-        {footer}
+        <Suspense fallback={<div>Loading...</div>}>
+          {header}
+          {children}
+          {footer}
+        </Suspense>
       </body>
     </html>
   );
