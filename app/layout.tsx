@@ -35,6 +35,7 @@ export default function RootLayout({
       <body
         className={`w-full max-w-[1000px] mx-auto text-sm sm:text-base min-h-screen flex flex-col antialiased text-slate-800 ${open_sans.className}`}
       >
+        {/* ensure fonts and any associated styles are loaded properly before rendering components that depend on them. */}
         <Suspense fallback={<div>Loading...</div>}>
           {header}
           {children}

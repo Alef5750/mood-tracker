@@ -5,6 +5,7 @@ import Main from "@/components/Main";
 
 const DashboardPage = () => {
   const isAuthenticated = false;
+
   let children = <Login />;
 
   if (isAuthenticated) {
