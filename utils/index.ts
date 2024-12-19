@@ -1,4 +1,4 @@
-export const baseRating = {
+export const baseRating: { [key: number]: number } = {
   "0": 2,
   "1": 5,
   "2": 4,

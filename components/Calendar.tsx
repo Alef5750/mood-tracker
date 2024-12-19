@@ -18,7 +18,8 @@ const months = {
 const monthsArr = Object.keys(months);
 const now = new Date();
 const dayList = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-export const data = {
+export const data: { [key: number]: number } = {
+  // enables indexing by number and not only by string
   "15": 2,
   "16": 4,
   "17": 1,
@@ -30,7 +31,10 @@ export const data = {
   "23": 3,
   "24": 5,
 };
-const Calendar: FC = ({ demo }) => {
+interface CalendarProps {
+  demo?: boolean;
+}
+const Calendar: FC<CalendarProps> = ({ demo }) => {
   const year = 2024;
   const month = "July";
   const monthNow = new Date(year, Object.keys(months).indexOf(month), 1);
