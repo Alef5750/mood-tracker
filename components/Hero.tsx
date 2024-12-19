@@ -1,15 +1,12 @@
 import { Fugaz_One } from "next/font/google";
 import React, { FC } from "react";
 import Button from "./Button";
-import Calendar from "./Calendar";
 const fugaz = Fugaz_One({ subsets: ["latin"], weight: ["400"] });
 
 const Hero: FC = () => {
   return (
     <div className="py-10 md:py-10 flex flex-col gap-4 sm:gap-8">
-      <h1
-        className={`text-5xl sm:text-6xl md:text-7xl text-center ${fugaz.className} `}
-      >
+      <h1 className={`text-5xl sm:text-6xl md:text-7xl text-center ${fugaz.className} `}>
         <span className="textGradient">Moodle </span>helps you track your
         <span className="textGradient"> daily</span> mood
       </h1>
@@ -21,7 +18,6 @@ const Hero: FC = () => {
         <Button text="Sign Up" />
         <Button text="Login" isDark />
       </div>
-      <Calendar />
     </div>
   );
 };
